@@ -11,7 +11,7 @@ public class Dev {
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
     public void inscreverBootcamp (Bootcamp bootcamp){
-        this.conteudosInscritos.add(bootcamp.getConteudos());
+        this.conteudosInscritos.add((Conteudo) bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
     }
 
@@ -27,6 +27,7 @@ public class Dev {
 
     public double calcularTotalXp() {
         this.conteudosConcluidos.stream().mapToDouble(conteudo -> conteudo.calcularXp()).sum();
+        return 0;
     }
 
     public String getNome() {
